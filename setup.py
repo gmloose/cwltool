@@ -114,7 +114,7 @@ setup(
         "schema-salad >= 8.2.20211104054942, < 9",
         "mypy-extensions",
         "psutil >= 5.6.6",
-        "prov == 1.5.1",
+        "prov == 2.0.0",
         "bagit >= 1.6.4",
         "typing-extensions",
         "coloredlogs",
