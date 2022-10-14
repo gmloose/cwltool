@@ -52,7 +52,7 @@ jobs:
           python-version: ${{ env.py-semver }}
 
       - name: Cache for pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ matrix.step }}-${{ hashFiles('requirements.txt', 'tox.ini') }}
@@ -64,7 +64,7 @@ jobs:
 
       - name: MyPy cache
         if: ${{ matrix.step == 'mypy' }}
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: .mypy_cache/${{ env.py-semver }}
           key: mypy-${{ env.py-semver }}
@@ -102,7 +102,7 @@ jobs:
           python-version: ${{ env.py-semver }}
 
       - name: Cache for pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ matrix.step }}-${{ hashFiles('requirements.txt') }}
@@ -143,7 +143,7 @@ jobs:
           python-version: 3.9
 
       - name: Cache for pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-conformance-${{ matrix.step }}-${{ hashFiles('requirements.txt') }}
@@ -177,7 +177,7 @@ jobs:
         run: sudo usermod -c 'CI Runner' $(whoami)
 
       - name: Cache for pip
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.11
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-release-${{ hashFiles('requirements.txt', 'test-requirements.txt') }}
